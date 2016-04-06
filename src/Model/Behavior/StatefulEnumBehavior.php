@@ -58,14 +58,16 @@ class StatefulEnumBehavior extends Behavior
         }
         foreach ($this->_table->transitions[$field] as $event => $transition) {
             if (array_key_exists('from', $transition)) {
-                $form = $transition['from'];
+                $from = $transition['from'];
                 $to = $transition['to'];
-            } else {
-                $form = $transition[0];
+            } else if (array_key_exists(0, $transition)){
+                $from = $transition[0];
                 $to = $transition[1];
+            } else {
+                throw new InvaliddTransitionConfigurationException([$field]);
             }
 
-            if (in_array($currentState, (array)$form) && in_array($nextState, (array)$to)) {
+            if (in_array($currentState, (array)$from) && in_array($nextState, (array)$to)) {
                 return true;
             }
         }
