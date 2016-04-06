@@ -7,6 +7,7 @@ use Cake\ORM\Behavior;
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
 use Cake\Utility\Inflector;
+use StatefulEnum\Model\Behavior\Exception\InvalidTransitionSettingException;
 
 class StatefulEnumBehavior extends Behavior
 {
