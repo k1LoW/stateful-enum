@@ -1,4 +1,4 @@
-# Simple stateful enum plugin for CakePHP 3
+# Simple stateful enum plugin for CakePHP 3 [![Build Status](https://travis-ci.org/k1LoW/stateful-enum.svg?branch=master)](https://travis-ci.org/k1LoW/stateful-enum)
 
 ## Installation
 
