@@ -1,0 +1,30 @@
+{
+    "name": "k1low/stateful-enum",
+    "description": "Simple stateful enum plugin for CakePHP 3",
+    "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp",
+        "enum",
+        "state"
+    ],
+    "homepage": "https://github.com/k1low/stateful-enum",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "StatefulEnum\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StatefulEnum\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}
