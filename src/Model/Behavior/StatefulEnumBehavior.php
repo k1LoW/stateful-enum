@@ -40,7 +40,7 @@ class StatefulEnumBehavior extends Behavior
         $field = Inflector::underscore(str_replace('isValidStatefulEvent', '', $method));
         list($entity, ) = $args;
         if (empty($this->_table->transitions[$field])) {
-            throw new MissingEnumConfigurationException([$field]);
+            return true;
         }
 
         if (empty($entity->{$this->_table->primaryKey()})) {
@@ -64,7 +64,7 @@ class StatefulEnumBehavior extends Behavior
                 $from = $transition[0];
                 $to = $transition[1];
             } else {
-                throw new InvaliddTransitionConfigurationException([$field]);
+                throw new InvalidTransitionSettingException([$field]);
             }
 
             if (in_array($currentState, (array)$from) && in_array($nextState, (array)$to)) {
